@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# commit时候进行校验的文件---对src目录下所有的.vue,.js,.ts文件执行eslint --fix命令即eslint自动修正(对所有文件)
+# eslint --fix ./src --ext .vue,.js,.ts
+
+# 只对缓存区的文件（.vue,.js,.ts）进行eslint --fix。配置哪些文件在触发在package.json文件的lint-staged进行配置
+npx lint-staged

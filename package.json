@@ -10,12 +10,23 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy-gh": "npm run docs:build && bash deploy-gh.sh"
+    "deploy-gh": "npm run docs:build && bash deploy-gh.sh",
+    "create": "node src/node/autoCreateFileByTemplate/index.js myTest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts}": "eslint --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "file-save": "^0.2.0",
+    "json-templater": "^1.2.0",
+    "uppercamelcase": "^3.0.0"
   }
 }
